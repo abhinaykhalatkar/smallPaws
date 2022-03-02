@@ -6,8 +6,8 @@ const Header = () => {
   return (
     <div>
     <nav>
-        <img src= {'/assets/logo.svg'}/>
-        <NavLink to="/">Adoption</NavLink>
+        <img src= {'/assets/logo.svg'} alt=""/>
+        <NavLink to="/adoptionCenter">Adoption</NavLink>
         <NavLink to="/dayCareServices">Services</NavLink>
         <NavLink to="/">Help Us</NavLink>
         <NavLink to="/">About Us</NavLink>

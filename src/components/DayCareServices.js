@@ -2,89 +2,89 @@ import React from "react";
 
 const DayCareServices = () => {
   return (
-    <div class="container">
+    <div className="container">
       <form>
-        <div class="form-group">
-          <label for="pickupDate">Pick Up</label>
+        <div className="form-group">
+          <label htmlFor="pickupDate">Pick Up</label>
           <input
             type="date"
-            class="form-control"
+            className="form-control"
             id="pickupDate"
             placeholder="pick up date"
           />
         </div>
-        <div class="form-group">
-          <label for="dropDate">Drop</label>
+        <div className="form-group">
+          <label htmlFor="dropDate">Drop</label>
           <input
             type="date"
-            class="form-control"
+            className="form-control"
             id="dropDate"
             placeholder="drop date"
           />
         </div>
-        <div class="form-group">
-          <label for="pickupTime">Pick Up Time</label>
+        <div className="form-group">
+          <label htmlFor="pickupTime">Pick Up Time</label>
           <input
             type="time"
-            class="form-control"
+            className="form-control"
             id="pickupTime"
             placeholder="pick up time"
           />
         </div>
-        <div class="form-group">
-          <label for="dropTime">Drop Time</label>
+        <div className="form-group">
+          <label htmlFor="dropTime">Drop Time</label>
           <input
             type="time"
-            class="form-control"
+            className="form-control"
             id="dropTime"
             placeholder="drop time"
           />
         </div>
-        <div class="form-check">
-          <input type="checkbox" class="form-check-input" id="Isolation" />
-          <label class="form-check-label" for="feeding">
+        <div className="htmlForm-check">
+          <input type="checkbox" className="htmlForm-check-input" id="Isolation" />
+          <label className="htmlForm-check-label" htmlFor="feeding">
             Isolation
           </label>
         </div>
-        <div class="form-check">
-          <input type="checkbox" class="form-check-input" id="Feeding" />
-          <label class="form-check-label" for="feeding">
+        <div className="htmlForm-check">
+          <input type="checkbox" className="htmlForm-check-input" id="Feeding" />
+          <label className="htmlForm-check-label" htmlFor="feeding">
             Feeding
           </label>
         </div>
 
-        <div class="form-check">
-          <input type="checkbox" class="form-check-input" id="isolation" />
-          <label class="form-check-label" for="feeding">
+        <div className="htmlForm-check">
+          <input type="checkbox" className="htmlForm-check-input" id="isolation" />
+          <label className="htmlForm-check-label" htmlFor="feeding">
             Isolation
           </label>
         </div>
-        <div class="form-check">
-          <input type="checkbox" class="form-check-input" id="grooming" />
-          <label class="form-check-label" for="feeding">
+        <div className="htmlForm-check">
+          <input type="checkbox" className="htmlForm-check-input" id="grooming" />
+          <label className="htmlForm-check-label" htmlFor="feeding">
             Grooming
           </label>
         </div>
 
-        <div class="form-group">
-          <label for="address">Address</label>
+        <div className="form-group">
+          <label htmlFor="address">Address</label>
           <input
             type="text"
-            class="form-control"
+            className="form-control"
             id="address"
             placeholder="Your address"
           />
         </div>
-        <div class="form-group">
-          <label for="amount"> Total Amount</label>
+        <div className="form-group">
+          <label htmlFor="amount"> Total Amount</label>
           <input
             type="number"
-            class="form-control"
+            className="form-control"
             id="amount"
             placeholder="total amount"
           />
         </div>
-        <button type="submit" class="btn btn-primary">
+        <button type="submit" className="btn btn-primary">
           Pay Now :)
         </button>
       </form>
