@@ -6,7 +6,10 @@ const Header = () => {
   return (
     <div>
     <nav>
-        <img src= {'/assets/logo.svg'}/>
+        <img src= {'/assets/logo.svg'} alt="logo"/>
+        <NavLink to="/Home">
+          Home
+        </NavLink>
         <NavLink to="/">Adoption</NavLink>
         <NavLink to="/dayCareServices">Services</NavLink>
         <NavLink to="/">Help Us</NavLink>
@@ -15,9 +18,6 @@ const Header = () => {
         Sign in / Sign Up
         </NavLink>
       </nav>
-      {/* <div className="circle">
-        <img src= {'/assets/circle.svg'}/>
-      </div> */}
     </div>
   )
 }
