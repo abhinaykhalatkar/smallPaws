@@ -37,11 +37,9 @@ const SingleVet = () => {
                         <p className="fonts">I have 15 years of experience with furry beings and have done my masters from Ukraine. </p>
                     </div>
                     <ul className="social-list">
-                        <li><i className="fa fa-facebook"></i></li>
-                        <li><i className="fa fa-dribbble"></i></li>
-                        <li><i className="fa fa-instagram"></i></li>
-                        <li><i className="fa fa-linkedin"></i></li>
-                        <li><i className="fa fa-google"></i></li>
+                        <li>8 years of experience</li><br></br>
+                        <li>Home Service</li>
+                        <li>5 Awards</li>
                     </ul>
                     <div className="buttons">
                     {/* <button className="btn btn-outline-primary px-4">Message</button>  */}
