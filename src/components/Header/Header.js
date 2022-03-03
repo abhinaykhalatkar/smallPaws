@@ -3,7 +3,6 @@ import { NavDropdown } from 'react-bootstrap';
 import { Link, NavLink } from "react-router-dom";
 import './Header.css';
 
-
 const Header = () => {
   return (
     <div>
@@ -16,7 +15,7 @@ const Header = () => {
           {/* <NavLink to="/adoptionCenter">Adoption</NavLink> */}
           <NavDropdown title="Adoption" id="basic-nav-dropdown">
             <NavDropdown.Item><NavLink to="/adoptionCenter">- Adopt a pet</NavLink></NavDropdown.Item>
-            <NavDropdown.Item><NavLink to="/adoptionCenter">- Put a pet for adoption</NavLink></NavDropdown.Item>
+            <NavDropdown.Item><NavLink to="/adoptionDetailsForm">- Put a pet for adoption</NavLink></NavDropdown.Item>
           </NavDropdown>
           <NavDropdown title="Services">
             <NavDropdown.Item><NavLink to="/dayCareServices">- Day care</NavLink></NavDropdown.Item>
