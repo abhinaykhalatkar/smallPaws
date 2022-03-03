@@ -50,47 +50,47 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="App container">
       <div>
         <h3> Register User </h3>
-        <input
+        <input className="form-control" style={{marginBottom: 10}}
           placeholder="Email..."
           onChange={(event) => {
             setRegisterEmail(event.target.value);
           }}
         />
-        <input
+        <input className="form-control" style={{marginBottom: 10}}
           placeholder="Password..."
           onChange={(event) => {
             setRegisterPassword(event.target.value);
           }}
         />
 
-        <button onClick={register}> Create User</button>
+        <button onClick={register} className="btn btn-primary"> Create User</button>
       </div>
 
       <div>
-        <h3> Login </h3>
-        <input
+        <h3 style={{marginTop:20}}> Already a User? </h3>
+        <input className="form-control" style={{marginBottom: 10}}
           placeholder="Email..."
           onChange={(event) => {
             setLoginEmail(event.target.value);
           }}
         />
-        <input
+        <input className="form-control" style={{marginBottom: 10}}
           placeholder="Password..."
           onChange={(event) => {
             setLoginPassword(event.target.value);
           }}
         />
 
-        <button onClick={login}> Login</button>
+        <button onClick={login} className="btn btn-primary"> Login</button>
       </div>
 
-      <h4> User Logged In: </h4>
+      <h4 style={{marginTop:30}}> User Logged In: </h4>
       {user?.email}
 
-      <button onClick={logout}> Sign Out </button>
+      <button onClick={logout} className="btn btn-primary"> Sign Out </button>
     </div>
   );
 }

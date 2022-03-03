@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import DayCareServices from './components/DayCareServices';
 import Home from "./components/Home/Home";
+import VetServices from "./components/VetService/VetService";
 
 
 function App() {
@@ -21,7 +22,8 @@ function App() {
           <Route path="/adoptionCenter" element={<AdoptionCenter/>}/>
           <Route path="/adoptionDetailsForm" element={<AdoptionDetailsForm/>}/>
           <Route path="/Home" element={<Home/>}/>
-          <Route path="/loginPage" element={<LoginPage/>}/>   
+          <Route path="/loginPage" element={<LoginPage/>}/>  
+          <Route path="/vetServices"  element={<VetServices/>}/>
         </Routes>    
     </div>
   );

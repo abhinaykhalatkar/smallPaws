@@ -2,7 +2,7 @@ import React from "react";
 
 const DayCareServices = () => {
   return (
-    <div className="container">
+    <div className="container" style={{marginTop:10}}>
       <form>
         <div className="form-group">
           <label htmlFor="pickupDate">Pick Up</label>
