@@ -1,5 +1,6 @@
 import './App.css';
 import { NavLink } from "react-router-dom";
+import AboutusContainer from './aboutus/aboutusContainer';
 
 function App() {
   return (
@@ -10,8 +11,9 @@ function App() {
         <NavLink to="/">Services</NavLink>
         <NavLink to="/">Help Us</NavLink>
         <NavLink to="/">About Us</NavLink>
-        <NavLink to="/">Singin / Login</NavLink>
+        <NavLink to="/">Signin / Login</NavLink>
       </nav>
+      <AboutusContainer />
       <div className="circle">
         <img src= {'/assets/circle.svg'}/>
       </div>
