@@ -10,6 +10,8 @@ import {
 import DayCareServices from './components/DayCareServices';
 import Home from "./components/Home/Home";
 import VetServices from "./components/VetService/VetService";
+import AboutUs from './components/AboutUs/AboutUs';
+import HelpUs from './components/HelpUs/HelpUs';
 
 
 function App() {
@@ -17,13 +19,14 @@ function App() {
     <div className="App">
       <Header/>
         <Routes>
+        <Route path="/" exact element={<Home/>}/>
           <Route path="/loginPage" element={<LoginPage/>}/>   
           <Route path="/dayCareServices" element={<DayCareServices/>}/>
           <Route path="/adoptionCenter" element={<AdoptionCenter/>}/>
           <Route path="/adoptionDetailsForm" element={<AdoptionDetailsForm/>}/>
-          <Route path="/Home" element={<Home/>}/>
-          <Route path="/loginPage" element={<LoginPage/>}/>  
           <Route path="/vetServices"  element={<VetServices/>}/>
+          <Route path="/helpus"  element={<HelpUs/>}/>
+          <Route path="/aboutUs"  element={<AboutUs/>}/>
         </Routes>    
     </div>
   );
