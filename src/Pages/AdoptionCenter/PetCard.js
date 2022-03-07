@@ -3,7 +3,6 @@ export default function PetCard(props){
     return(
 
         <div className="container">
-        <h1 className="heading">Adoption Center</h1>
         <div className="gallery">
             {
                 props.petTemplateData.map((el)=>(
@@ -14,6 +13,7 @@ export default function PetCard(props){
                 ))
             }
         </div>
+        
     </div>
     )
 

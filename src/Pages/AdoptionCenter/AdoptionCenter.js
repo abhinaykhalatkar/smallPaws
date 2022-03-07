@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import PetCard from "./PetCard";
+import "./AdoptionCenter.css"
 
 export default function AdoptionCenter() {
   const [isLoading, setIsLoading] = useState(true);
@@ -17,7 +18,7 @@ export default function AdoptionCenter() {
       })
       .then((res) => {
         setIsLoading(false);
-        setLoadedPetData(res.data.splice(0,20));
+        setLoadedPetData(res.data.splice(0, 20));
       })
       .catch((error) => {
         return <div>Not loaded...</div>;
@@ -33,19 +34,24 @@ export default function AdoptionCenter() {
   }
   return (
     <div>
-      <div className="locationDialog">
-        <label htmlFor="locationInput">Select City</label>
-        <select name="citySelect" id="city">
-          <option value="Heidelbirg">Heidelbirg</option>
-          <option value="Mannheim">Mannheim</option>
-        </select>
-        <NavLink to="/adoptionDetailsForm">
-          Need to put pet for adoption?
-        </NavLink>
+        <div className="div1">
+        <NavLink to="/adoptionDetailsForm">Need to put pet for adoption?</NavLink>
+        </div>
+
+ 
         <div className="petDisplayModule">
+        <h1 className="heading">Adoption Center</h1>
+        <div className="locationPicker">
+            <div>
+            <label htmlFor="locationInput">Select City</label>
+          <select name="locationInput" id="city">
+            <option value="Heidelbirg">Heidelbirg</option>
+            <option value="Mannheim">Mannheim</option>
+          </select>
+            </div>
+        </div>
           <PetCard petTemplateData={loadedPetsData} />
         </div>
-      </div>
     </div>
   );
 }
