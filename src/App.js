@@ -1,25 +1,27 @@
 import './App.css';
+import Navbar from './components/Navbar/Navbar';
 import Header from './components/Header';
-import LoginPage from './components/LoginPage';
-import AdoptionCenter from './components/AdoptionCenter/AdoptionCenter';
-import AdoptionDetailsForm from './components/AdoptionDetailsForm/AdoptionDetailsForm';
+import LoginPage from './Pages/LoginPage/LoginPage';
+import AdoptionCenter from './Pages/AdoptionCenter/AdoptionCenter';
+import AdoptionDetailsForm from './Pages/AdoptionDetailsForm/AdoptionDetailsForm';
 import {
   Routes,
   Route,
 } from "react-router-dom";
-import DayCareServices from './components/DayCareServices';
-import Home from "./components/Home/Home";
-import VetServices from "./components/VetService/VetService";
-import AboutUs from './components/AboutUs/AboutUs';
-import HelpUs from './components/HelpUs/HelpUs';
+import DayCareServices from './Pages/DayCareServices/DayCareServices';
+import Home from "./Pages/Home/Home";
+import VetServices from "./Pages/VetService/VetService";
+import AboutUs from './Pages/AboutUs/AboutUs';
+import HelpUs from './Pages/HelpUs/HelpUs';
+import AdoptionProcess from './Pages/AdoptionProcess/AdoptionProcess';
 
 
 function App() {
   return (
     <div className="App">
-      <Header/>
+      <Navbar/>
         <Routes>
-        <Route path="/" exact element={<Home/>}/>
+          <Route path="/" exact element={<Home/>}/>
           <Route path="/loginPage" element={<LoginPage/>}/>   
           <Route path="/dayCareServices" element={<DayCareServices/>}/>
           <Route path="/adoptionCenter" element={<AdoptionCenter/>}/>
@@ -27,6 +29,7 @@ function App() {
           <Route path="/vetServices"  element={<VetServices/>}/>
           <Route path="/helpus"  element={<HelpUs/>}/>
           <Route path="/aboutUs"  element={<AboutUs/>}/>
+          <Route path="/adoptionProcess"  element={<AdoptionProcess/>}/>
         </Routes>    
     </div>
   );
