@@ -58,12 +58,12 @@ const Home = () => {
           </Card.Body>
         </NavLink>
        
-        <Card className="card">
+        <NavLink to="/adoptionCenter" className="card">
           <Card.Img variant="top" src={'/assets/card3.svg'} className="card-img-top" />
           <Card.Body>
             <Card.Title>Adoption Center</Card.Title>
           </Card.Body>
-        </Card>
+        </NavLink>
       </CardGroup>
     </div>
   );

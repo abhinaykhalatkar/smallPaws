@@ -26,7 +26,7 @@ function Navbar() {
                   onMouseEnter={() => setDropdown(true)}
                   onMouseLeave={() => setDropdown(false)}
                 >
-                  {pathLoc};
+                  {pathLoc}
                   {dropdown && <Dropdown />}
                 </li>
               );

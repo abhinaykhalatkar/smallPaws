@@ -7,6 +7,12 @@ export const navItems = [
   },
   {
     id: 2,
+    title: "Adoption",
+    path: "./",
+    cName: "nav-item__2",
+  },
+  {
+    id: 2,
     title: "Services",
     path: "none",
     cName: "nav-item__2",

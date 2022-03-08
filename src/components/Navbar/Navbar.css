@@ -1,6 +1,7 @@
 .navbar__2 {
   height: 10vh;
-  background: #1b1919;
+  background: #8E24AA;
+  /* background: #1b1919; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,12 +24,14 @@
   justify-content: flex-end;
   margin-right: 1rem;
   margin-top: 17px;
+  
 }
 
 .nav-item__2 {
   display: flex;
   align-items: center;
   height: 10vh;
+
 }
 
 .nav-item__2 a ,.nav-item__2 h3{
@@ -39,11 +42,19 @@
   padding: 6px 16px;
 }
 
-.nav-item__2 a:hover {
-  background: rgb(0, 212, 212);
+
+
+.nav-item__2 a:hover ,.nav-item__2 h3:hover{
+  background: #e4572e;
+  cursor: pointer;
+  color: white;
+  
 }
 .nav-item__2 ul{
   
   z-index: 2;
   padding-left: 0rem;
+}
+.submenu-item{
+  background: #e4572e;
 }

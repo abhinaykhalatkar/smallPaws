@@ -1,6 +1,6 @@
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
-import Header from './components/Header';
+
 import LoginPage from './Pages/LoginPage/LoginPage';
 import AdoptionCenter from './Pages/AdoptionCenter/AdoptionCenter';
 import AdoptionDetailsForm from './Pages/AdoptionDetailsForm/AdoptionDetailsForm';
