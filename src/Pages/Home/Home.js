@@ -1,42 +1,12 @@
 import React from "react";
 import "./Home.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Carousel, Card, CardGroup } from 'react-bootstrap';
-import image1 from '../../Image/image1.jpeg';
-import image2 from '../../Image/image2.jpeg';
-import image3 from '../../Image/image3.jpeg';
-import { NavLink,Link } from "react-router-dom";
-
-
+import { Card, CardGroup } from 'react-bootstrap';
+import { NavLink, Link } from "react-router-dom";
 
 const Home = () => {
   return (
     <div>
-      {/* <div class="row">
-        <div class="col-md-6">
-          <div class="page-1-heading">
-            <h2 data-aos="fade-right"
-              data-aos-offset="300"
-              data-aos-easing="ease-in-sine" class="py-2">
-              Such short little lives our pets have to spend with us, and they spend most of it waiting for us to come home each day. It is amazing how much love and laughter they bring into our lives and even how much closer we become with each other because of them.
-            </h2>
-            <h3 data-aos="fade-right" data-aos-delay="400">-John Grogan </h3>
-          </div>
-        </div>
-        <div class="bg-shape">
-        <img src={'/assets/backImage.jpeg'} alt="" className="bg-image" />
-      </div>
-      </div>
-      
-      <div class="page-2-Heading">
-      <h2 class="heading">Who we are</h2>
-      <p class="py-3">
-        Platinum is a transparent organisation which truly belives in
-        organisation ethics, integrit mutual respect teamword and
-        <br />
-        rendera high quality service to our clients.
-      </p>
-    </div> */}
       <section className="page1">
         <div className="container">
           <div className="row">
@@ -76,7 +46,7 @@ const Home = () => {
                 </p>
               </div>
               <div data-aos="fade-up"
-                  data-aos-easing="ease-in-sine" className="button">
+                data-aos-easing="ease-in-sine" className="button">
                 <Link to="/aboutUs">
                   <button className="btn__2">More</button>
                 </Link>
