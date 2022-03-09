@@ -1,6 +1,6 @@
 .navbar__2 {
   height: 10vh;
-  background: #8E24AA;
+  background: #c4c4c495;
   /* background: #1b1919; */
   display: flex;
   justify-content: center;
@@ -45,7 +45,7 @@
 
 
 .nav-item__2 a:hover ,.nav-item__2 h3:hover{
-  background: #e4572e;
+  background: #e4582e7b;
   cursor: pointer;
   color: white;
   

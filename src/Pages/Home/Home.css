@@ -1,23 +1,91 @@
-/* image slider */
-.imageSlider{
-    display: flex;
-    margin-top: 10px;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
+.page1 {
+    width: 100%;
+    height: 100vh;
+    position: relative;
 }
-.carouselSlide {
-    width: 1180px !important;
+.bg {
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
 }
-.w-100 {
-    width: 100%!important;
-    border-radius: 10px;
+    .svgImg {
+      margin-top: 5%;
+      width: 100%;
+    }
+  
+
+  .page-1-heading {
+    padding: 100px 0;
+  }
+    h6 {
+      font-weight: 400;
+      font-style: italic;
+    }
+.py-2{
+  color: white;
+  margin-top: 20%;
+  font-size: x-large;
+  font-family: fredoka;
 }
 
-/* Card */
-.card-group{
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 5rem;
+    }
+    .bg-shape {
+      z-index: -1;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+    }
+      .shape {
+        width: 100%;
+      }
+
+
+    .page2 {
+        width: 100%;
+    }
+    .py-3{
+      margin-top: -2%;
+      color: #ABABAB;
+      font-size: smaller;
+      font-family: poppins;
+    }
+    .py-4{
+      color: #000000;
+      font-size: x-large;
+      font-family: fredoka;
+    }
+    .heading{
+      color: #6C63FF;
+    }
+    .btn__2 {
+      border: none;
+      background: transparent;
+      padding: 6px 16px;
+      font-size: 0.8rem;
+      color: white;
+      background: #e4572e;
+      border-radius: 5px;
+      transition: 0.3s all ease-out;
+      cursor: pointer;
+    }
+    
+    .btn__2:hover {
+      color: rgb(0, 212, 212);
+      background: white;
+    }
+  .page3{
+    background-color: #d9d9d925;
+  }
+  .page3Heading{
+    padding: 25px;
+  }
+
+  .card-group{
     max-width: 75%;
     display: flex;
     flex-flow: row wrap;
@@ -45,4 +113,26 @@
 .card-img-top {
     width: 50% !important;
     margin: 20px auto;
+}
+
+.button{
+  display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.btn__2 {
+  border: none;
+  background: transparent;
+  padding: 6px 16px;
+  font-size: 0.8rem;
+  color: white;
+  background: #e4572e;
+  border-radius: 5px;
+  transition: 0.3s all ease-out;
+  cursor: pointer;
+}
+
+.btn__2:hover {
+  color: rgb(255, 255, 255);
+  background: rgb(67, 67, 67);
 }
