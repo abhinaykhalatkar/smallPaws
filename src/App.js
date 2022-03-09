@@ -27,7 +27,7 @@ function App() {
           <Route path="/adoptionCenter" element={<AdoptionCenter/>}/>
           <Route path="/adoptionDetailsForm" element={<AdoptionDetailsForm/>}/>
           <Route path="/vetServices"  element={<VetServices/>}/>
-          <Route path="/helpus"  element={<HelpUs/>}/>
+          <Route path="/helpUs"  element={<HelpUs/>}/>
           <Route path="/aboutUs"  element={<AboutUs/>}/>
           <Route path="/adoptionProcess"  element={<AdoptionProcess/>}/>
         </Routes>    

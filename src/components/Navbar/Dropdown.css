@@ -1,4 +1,43 @@
-.services-submenu {
+.dropdown-menu__67 {
+  background: red;
+  width: 200px;
+  position: absolute;
+  top: 80px;
+  list-style: none;
+  text-align: start;
+  padding-inline-start: 0px;
+}
+
+.dropdown-menu__67 li {
+  background: #1888ff;
+  cursor: pointer;
+}
+
+.dropdown-menu__67 li:hover {
+  background: #5cabff;
+}
+
+.dropdown-menu__67.clicked {
+  display: none;
+}
+
+.dropdown-link__67 {
+  display: block;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+  color: #fff;
+  padding: 16px;
+}
+
+@media screen and (max-width: 960px) {
+  .fa-caret-down {
+    display: none;
+  }
+}
+
+
+/* .Services-submenu,.Adoption-submenu,.Help-Us-submenu,.About-Us-submenu{
   width: 10rem;
   position: absolute;
   top: 71px;
@@ -7,16 +46,16 @@
   border-radius: 10px;
 }
 
-.services-submenu li {
+.Services-submenu li,.Adoption-submenu li,.Help-Us-submenu li,.About-Us-submenu li {
   background: rgb(0, 212, 212);
   cursor: pointer;
 }
 
-.services-submenu li a:hover {
+.Services-submenu li a:hover,.Adoption-submenu li a:hover,.Help-Us-submenu li a:hover,.About-Us-submenu li a:hover {
   background: rgb(0, 175, 175);
 }
 
-.services-submenu.clicked {
+.Services-submenu.clicked,.Adoption-submenu.clicked,.Help-Us-submenu.clicked,.About-Us-submenu.clicked {
   display: none;
 }
 
@@ -28,4 +67,4 @@
   color: white;
   padding: 16px;
 }
-
+ */
