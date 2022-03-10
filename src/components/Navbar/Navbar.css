@@ -63,8 +63,8 @@
   background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
   height: 80px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+
+
   font-size: 1.2rem;
 }
 
@@ -80,8 +80,8 @@
 .fa-firstdraft {
   margin-left: 0.5rem;
   font-size: 1.6rem;
-  height: 8vh;
-  width: 17vw;
+  height: 7vh;
+  width: 15vw;
 }
 
 .nav-menu__67 {
@@ -93,6 +93,7 @@
   width: 70vw;
   justify-content: end;
   margin-right: 7rem;
+  z-index: 2;
 }
 
 .nav-item__67 {
