@@ -1,12 +1,15 @@
 import { useState } from "react";
+import { Box } from "@mui/system";
+import { GoogleLogin } from "react-google-login";
+import { TextField } from "@mui/material";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   onAuthStateChanged,
   signOut
 } from "firebase/auth";
-import "../../App.css";
-import {auth} from "../../config/firebase.config";
+import "./LoginPage.css";
+import { auth } from "../../config/firebase.config";
 function App() {
   const [registerEmail, setRegisterEmail] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
@@ -48,49 +51,55 @@ function App() {
   const logout = async () => {
     await signOut(auth);
   };
-
+  const responseGoogle = (response) => {
+    console.log(response);
+  };
   return (
-    <div className="App container">
-      <div>
-        <h3> Register User </h3>
-        <input className="form-control" style={{marginBottom: 10}}
-          placeholder="Email..."
-          onChange={(event) => {
-            setRegisterEmail(event.target.value);
-          }}
-        />
-        <input className="form-control" style={{marginBottom: 10}}
-          placeholder="Password..."
-          onChange={(event) => {
-            setRegisterPassword(event.target.value);
-          }}
-        />
-
-        <button onClick={register} className="btn btn-primary"> Create User</button>
+    <div>
+      <div className="loginBox">
+        <div className="loginContent">
+          <Box
+            component="form"
+            sx={{
+              '& .MuiTextField-root': { m: 1, width: '25ch' },
+            }}
+            noValidate
+            autoComplete="off"
+          >
+            <h2 className="login-heading"> Login </h2>
+            <div className="googleSingIn">
+              <GoogleLogin clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
+                buttonText="Sing up using Google"
+                onSuccess={responseGoogle}
+                onFailure={responseGoogle}
+                cookiePolicy={'single_host_origin'} style={{ width: 192, height: 48 }} />
+            </div>
+            <h6 className="login-heading"> Or </h6>
+            <div className="loginPage">
+              <TextField
+                label='Username' placeholder='Enter username' variant="standard"
+                onChange={(event) => {
+                  setRegisterEmail(event.target.value);
+                }}
+              />
+            </div>
+            <div className="loginPage">
+              <TextField
+                label='Password' placeholder='Enter password' variant="standard"
+                onChange={(event) => {
+                  setRegisterPassword(event.target.value);
+                }}
+              />
+            </div>
+            <div className="loginButton">
+              <button onClick={register} className="btn-login"> Login</button>
+            </div>
+          </Box>
+        </div>
       </div>
-
-      <div>
-        <h3 style={{marginTop:20}}> Already a User? </h3>
-        <input className="form-control" style={{marginBottom: 10}}
-          placeholder="Email..."
-          onChange={(event) => {
-            setLoginEmail(event.target.value);
-          }}
-        />
-        <input className="form-control" style={{marginBottom: 10}}
-          placeholder="Password..."
-          onChange={(event) => {
-            setLoginPassword(event.target.value);
-          }}
-        />
-
-        <button onClick={login} className="btn btn-primary"> Login</button>
+      <div className="login-bg-shape">
+        <img src={'/assets/backImage.jpeg'} alt="" className="login-shape" />
       </div>
-
-      <h4 style={{marginTop:30}}> User Logged In: </h4>
-      {user?.email}
-
-      <button onClick={logout} className="btn btn-primary"> Sign Out </button>
     </div>
   );
 }

@@ -76,7 +76,7 @@ function Navbar() {
     <>
       <nav className='navbar__67'>
         <Link to='/' className='navbar-logo__67' onClick={closeMobileMenu}>
-        <img className='fab fa-firstdraft' src= {'/assets/logo.svg'} alt="logo"/>
+        <img className='fab fa-firstdraft' src= {'/assets/whiteLogo.svg'} alt="logo"/>
         </Link>
         <div className='menu-icon__67' onClick={handleClick}>
         <img className={click ? 'fas fa-times' : 'fas fa-bars'} src= {'/assets/logo.svg'} alt="logo"/>
