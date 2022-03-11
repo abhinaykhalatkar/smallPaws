@@ -65,7 +65,7 @@
   display: flex;
 
 
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 .navbar-logo__67 {
@@ -99,13 +99,13 @@
 .nav-item__67 {
   display: flex;
   align-items: center;
-  height: 88px;
+  height: 80px;
 }
 
 .nav-links__67  {
   color: white;
   text-decoration: none;
-  padding: 0.5rem 1rem;
+  padding: 0.2rem 1rem;
 }
 .nav-links__68{
 text-decoration: none;
