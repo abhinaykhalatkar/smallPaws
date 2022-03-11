@@ -9,7 +9,8 @@ import {
 } from "react-router-dom";
 import DayCareServices from './components/DayCareServices';
 import Home from "./components/Home/Home";
-
+import AboutusContainer from './components/aboutus/aboutusContainer';
+import Helpuscontainer from './components/helpus/helpuscontainer';
 
 function App() {
   return (
@@ -21,7 +22,9 @@ function App() {
           <Route path="/adoptionCenter" element={<AdoptionCenter/>}/>
           <Route path="/adoptionDetailsForm" element={<AdoptionDetailsForm/>}/>
           <Route path="/Home" element={<Home/>}/>
-          <Route path="/loginPage" element={<LoginPage/>}/>   
+          <Route path="/aboutus" element={<AboutusContainer/>}/>   
+          <Route path="/helpus" element={<Helpuscontainer/>}/> 
+
         </Routes>    
     </div>
   );

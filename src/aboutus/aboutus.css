@@ -1,0 +1,28 @@
+.aboutus-container{
+    width:90%;
+    margin:0% auto;
+}
+
+.card,.card-2{
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding:20px 30px;
+}
+
+.card-2{
+    margin-top:30px
+}
+
+.achievement-container{
+    display: flex;
+    justify-content: space-evenly
+}
+
+p,h3{
+    margin: 0px;
+}
+
+.contact-details{
+    width:60%;
+    margin: 0 auto;
+}
