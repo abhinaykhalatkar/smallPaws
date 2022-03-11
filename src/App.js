@@ -1,12 +1,9 @@
 import './App.css';
-import Header from './components/Header';
+import Header from './components/Header/Header';
 import LoginPage from './components/LoginPage';
 import AdoptionCenter from './components/AdoptionCenter/AdoptionCenter';
 import AdoptionDetailsForm from './components/AdoptionDetailsForm/AdoptionDetailsForm';
-import {
-  Routes,
-  Route,
-} from "react-router-dom";
+import {Routes, Route } from "react-router-dom";
 import DayCareServices from './components/DayCareServices';
 import Home from "./components/Home/Home";
 import AboutusContainer from './components/aboutus/aboutusContainer';
@@ -17,6 +14,7 @@ function App() {
     <div className="App">
       <Header/>
         <Routes>
+        <Route path="/" exact element={<Home/>}/>
           <Route path="/loginPage" element={<LoginPage/>}/>   
           <Route path="/dayCareServices" element={<DayCareServices/>}/>
           <Route path="/adoptionCenter" element={<AdoptionCenter/>}/>

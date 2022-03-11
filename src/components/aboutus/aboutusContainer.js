@@ -6,7 +6,7 @@ class AboutusContainer extends React.Component{
         return(
             <div className="aboutus-container">
                 <h2>About Us</h2>
-                <div className="card">
+                <div className=" about-card">
                     <h3>Achievements</h3>
                     <div className="achievement-container">
                         <div>

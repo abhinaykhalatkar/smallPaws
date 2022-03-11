@@ -1,0 +1,20 @@
+nav {
+    display: flex;
+    gap: 100px;
+    align-items: center;
+    margin: 0 auto;
+    width: 96%;
+  }
+  
+  nav img {
+    margin-right: auto;
+    height: 65px;
+  }
+  .circle {
+    margin: 220px 0px 20px 60px;
+  }
+.navBar{
+    margin-left: 20%;
+    gap: 50px;
+    display: flex;
+}

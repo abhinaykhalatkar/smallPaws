@@ -18,24 +18,18 @@
 
 /* Card */
 .card-group{
-    max-width: 75%;
-    display: flex;
-    flex-flow: row wrap;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-content: center;
     justify-content: center;
     margin: 30px auto;
-    gap: 30px !important;
+    gap: 140px !important;
 
 }
 .card {
-    display: flex;
     align-items: center;
     border-radius: 20px !important;
     box-shadow: 4px 4px 9px #00000047;
     transition: all 0.2s ease;
     cursor: pointer;
+    width: 130% !important;
     transition-duration: 0.7s;
 }
 .card:hover {

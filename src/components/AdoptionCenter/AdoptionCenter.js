@@ -15,7 +15,7 @@ export default function AdoptionCenter(){
         return res
     }).then((res)=>{
         setIsLoading(false);
-        setLoadedPetData(res.data);
+        setLoadedPetData(res.data.slice(0,20));
     })
     .catch((error)=>{
         return(
