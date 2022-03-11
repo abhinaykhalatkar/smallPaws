@@ -97,7 +97,7 @@ function Navbar() {
               className='nav-links__67'
               onClick={closeMobileMenu}
             >
-              Adoption <i className='fas fa-caret-down' />
+              Adoption 
             </p>
             {dropdown && <Dropdown dropdownNum={0}/>}
           </li>
@@ -111,7 +111,7 @@ function Navbar() {
               className='nav-links__67'
               onClick={closeMobileMenu}
             >
-              Services <i className='fas fa-caret-down' />
+              Services 
             </p>
             {dropdown2 && <Dropdown dropdownNum={1}/>}
           </li>
@@ -125,7 +125,7 @@ function Navbar() {
               className='nav-links__67'
               onClick={closeMobileMenu}
             >
-              Help Us <i className='fas fa-caret-down' />
+              Help Us 
             </p>
             {dropdown3 && <Dropdown dropdownNum={2}/>}
           </li>
@@ -139,7 +139,7 @@ function Navbar() {
               className='nav-links__67'
               onClick={closeMobileMenu}
             >
-              About Us <i className='fas fa-caret-down' />
+              About Us 
             </p>
             {dropdown4 && <Dropdown dropdownNum={3} />}
           </li>
