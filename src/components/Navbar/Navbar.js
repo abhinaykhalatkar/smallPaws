@@ -6,44 +6,6 @@ import "./Navbar.css";
 import Button from "./Button";
 import Dropdown from "./Dropdown";
 
-// function Navbar() {
-//   const [dropdown, setDropdown] = useState(false);
-
-//   return (
-
-    
-//       <nav className="navbar__2">
-//         <Link to="/" className="navbar-logo__2">
-//           <img src= {'/assets/logo.svg'} alt="logo"/>
-//         </Link>
-//         <ul className="nav-items__2">
-//           {navItems.map((item) => {
-//             if (!(item.title === "Home")) {
-//               let pathLoc=item.path==="none"?<h3>{item.title}</h3>:<Link to={item.path}>{item.title}</Link>;
-
-//               return (
-//                 <li
-//                   key={item.id}
-//                   className={item.cName}
-//                   onMouseEnter={() => setDropdown(true)}
-//                   onMouseLeave={() => setDropdown(false)}
-//                 >
-//                   {pathLoc}
-//                   {dropdown && <Dropdown dropDownName={item.title} dropDownTitleCode={item.titleCode}/>}
-//                 </li>
-//               );
-//             }
-//             return (
-//               <li key={item.id} className={item.cName}>
-//                 <Link to={item.path}>{item.title}</Link>
-//               </li>
-//             );
-//           })}
-//         </ul>
-//         <Button />
-//       </nav>
-//   );
-// }
 function Navbar() {
   const [click, setClick] = useState(false);
   const [dropdown, setDropdown1] = useState(false);
