@@ -1,24 +1,18 @@
-/* .div1{
-    display: flex;
-    flex-direction: row-reverse;
-}
-.div1 a{
-    margin: 1rem 3rem;
-}
 
-.locationPic__AdCenker{
+.locationPicker{
     display: flex;
     flex-direction:row-reverse;
+    margin: 1rem 0rem 1rem 0rem;
 }
-.locationPic__AdCenker div{
+.locationPicker div{
  display: flex;
  flex-direction: row;
 margin: 0rem 10rem 0rem 4rem;
 gap: 1rem;
 }
 .heading{
-    padding: 0;
-} */
+    text-align: center
+}
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 
@@ -29,148 +23,35 @@ gap: 1rem;
     align-items: center;
     justify-content: center
 }
-
-p {
-    margin: 0px
+.petCardBox{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
 }
-
-.card__AdCen {
-    width: 280px;
-    height: 520px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    background: #fff;
-    transition: all 0.5s ease;
-    cursor: pointer;
-    user-select: none;
-    z-index: 10;
-    overflow: hidden
-}
-
-.card__AdCen .backgroundEffect__AdCen {
-    bottom: 0;
-    height: 0px;
-    width: 100%
-}
-
-.card__AdCen:hover {
-    color: #fff;
-    transform: scale(1.025);
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 5px 10px
-}
-
-.card__AdCen:hover .backgroundEffect__AdCen {
-    bottom: 0;
-    height: 320px;
-    width: 100%;
-    position: absolute;
-    z-index: -1;
-    background: #1b9ce3;
-    animation: popBackground 0.3s ease-in
-}
-
-@keyframes popBackground {
-    0% {
-        height: 20px;
-        border-top-left-radius: 50%;
-        border-top-right-radius: 50%
+@media screen and (max-width: 650px) {
+    .petCardBox{
+        grid-template-columns: 1fr;
+        align-items: center;
     }
-
-    50% {
-        height: 80px;
-        border-top-left-radius: 75%;
-        border-top-right-radius: 75%
+  }
+@media ( min-width: 650px) and (max-width: 850px) {
+    .petCardBox{
+        grid-template-columns: 1fr 1fr 1fr;
     }
-
-    75% {
-        height: 160px;
-        border-top-left-radius: 85%;
-        border-top-right-radius: 85%
+  }
+@media ( min-width: 850px) and ( max-width: 1100px) {
+    .petCardBox{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
     }
+  }
 
-    100% {
-        height: 320px;
-        border-top-left-radius: 100%;
-        border-top-right-radius: 100%
+  @media screen and ( min-width: 1100px) {
+    .petCardBox{
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     }
-}
-
-.card__AdCen .pic__AdCen {
-    position: relative
-}
-
-.card__AdCen .pic__AdCen img {
-    width: 100%;
-    height: 280px;
-    object-fit: cover
-}
-
-.card__AdCen .date {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 70px;
-    background-color: #1b9ce3;
-    color: white;
-    position: absolute;
-    bottom: 0px;
-    transition: all ease
-}
-
-.card__AdCen .date .day {
-    font-size: 14px;
-    font-weight: 600
-}
-
-.card__AdCen .date .month,
-.card__AdCen .date .year {
-    font-size: 10px
-}
-
-.card__AdCen .text-muted {
-    font-size: 12px
-}
-
-.card__AdCen:hover .text-muted {
-    color: #fff !important
-}
-
-.card__AdCen .content__AdCen {
-    padding: 0 20px
-}
-
-.card__AdCen .content__AdCen .btn__AdCen {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5px 10px;
-    background-color: #1b9ce3;
-    border-radius: 25px;
-    font-size: 12px;
-    border: none
-}
-
-.card__AdCen:hover .content__AdCen .btn__AdCen {
-    background: #fff;
-    color: #1b9ce3;
-    box-shadow: #0000001a 0px 3px 5px
-}
-
-.card__AdCen .content__AdCen .btn__AdCen .fas__AdCen {
-    font-size: 10px;
-    padding-left: 5px
-}
-
-.card__AdCen .content__AdCen .foot__AdCen .admin__AdCen {
-    color: #1b9ce3;
-    font-size: 12px
-}
-
-.card__AdCen:hover .content__AdCen .foot__AdCen .admin__AdCen {
-    color: #fff
-}
-
-.card__AdCen .content__AdCen .foot__AdCen .icon {
-    font-size: 12px
-}
+  }
+  @media screen and ( min-width: 1600px) {
+    .petCardBox{
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+  }
