@@ -1,15 +1,17 @@
+
+
 import { useState } from "react";
-import { Box } from "@mui/system";
-import { GoogleLogin } from "react-google-login";
-import { TextField } from "@mui/material";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   onAuthStateChanged,
   signOut,
 } from "firebase/auth";
+
+import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+// import "../App.css";
 import "./LoginPage.css";
-import { auth , Client_ID} from "../../config/firebase.config";
+import { auth } from "../../config/firebase.config";
 function App() {
   const [registerEmail, setRegisterEmail] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
@@ -17,6 +19,17 @@ function App() {
   const [loginPassword, setLoginPassword] = useState("");
 
   const [user, setUser] = useState({});
+
+  const signInWithGoogle = () => {
+    const provider = new GoogleAuthProvider();
+    signInWithPopup(auth, provider)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   onAuthStateChanged(auth, (currentUser) => {
     setUser(currentUser);
@@ -51,121 +64,63 @@ function App() {
   const logout = async () => {
     await signOut(auth);
   };
-  const responseGoogle = (response) => {
-    console.log(response);
-  };
+
   return (
-    <div className="loginFlex">
-      <div className="loginBox">
-        <div className="loginContent">
-          <div className="googleSingIn">
-            <GoogleLogin
-              clientId={Client_ID}
-              buttonText="Sing up using Google"
-              onSuccess={responseGoogle}
-              onFailure={responseGoogle}
-              cookiePolicy={"single_host_origin"}
-              style={{ width: 192, height: 48 }}
-            />
-          </div>
-          <Box
-            component="form"
-            sx={{
-              "& .MuiTextField-root": { m: 1, width: "25ch" },
-            }}
-            noValidate
-            autoComplete="off"
-          >
-            <h2 className="login-heading"> Register </h2>
+    <div className="App" style={{display: 'flex',justifyContent: 'space-around',backgroundImage: 'url(/assets/backImage.jpeg)',width: '100%', height: '100vh',alignItems:'center',backgroundSize: 'cover'}}>
+      <div style ={{display:'flex',flexDirection:'column',maxWidth:'400px',background:'white',padding:'50px',justifyContent:'center',alignItems:'center',maxHeight: '500px' }}>
+        <h3> Register User </h3>
+        <input
+          placeholder="Email..."
+          style={{margin:10}}
+          className="form-control form-control-lg"
+          onChange={(event) => {
+            setRegisterEmail(event.target.value);
+          }}
+        />
+        <input
+          placeholder="Password..."
+          style={{margin:10}}
+          className="form-control form-control-lg"
+          onChange={(event) => {
+            setRegisterPassword(event.target.value);
+          }}
+        />
 
-            <div className="loginPage">
-              <TextField
-                label="Email"
-                placeholder="Enter email address"
-                variant="standard"
-                onChange={(event) => {
-                  setRegisterEmail(event.target.value);
-                }}
-              />
-            </div>
-            <div className="loginPage">
-              <TextField
-                label="Username"
-                placeholder="Enter username"
-                variant="standard"
-                onChange={(event) => {
-                  setRegisterEmail(event.target.value);
-                }}
-              />
-            </div>
-            <div className="loginPage">
-              <TextField
-                label="Password"
-                placeholder="Enter password"
-                variant="standard"
-                type="password"
-                autoComplete="off"
-                onChange={(event) => {
-                  setRegisterPassword(event.target.value);
-                }}
-              />
-            </div>
-            <div className="loginButton">
-              <button onClick={register} className="btn-login">
-                {" "}
-                Register{" "}
-              </button>
-            </div>
-          </Box>
-        </div>
+        <button onClick={register} className="btn btn-primary btn-lg btn-block" style={{margin:10}}> Create User</button>
+        <button class="btn btn-lg btn-block btn-primary" style={{backgroundColor: "#dd4b39",margin:10}} onClick={signInWithGoogle}><i class="fa fa-google me-2"></i> Sign in with google</button>
+        
       </div>
 
-      <div className="loginBox2">
-        <div className="loginContent">
-          <Box
-            component="form"
-            sx={{
-              "& .MuiTextField-root": { m: 1, width: "25ch" },
-            }}
-            noValidate
-            autoComplete="off"
-          >
-            <h2 className="login-heading"> Login </h2>
-            <div className="loginPage">
-              <TextField
-                label="Username"
-                placeholder="Enter username"
-                variant="standard"
-                onChange={(event) => {
-                  setRegisterEmail(event.target.value);
-                }}
-              />
-            </div>
-            <div className="loginPage">
-              <TextField
-                label="Password"
-                placeholder="Enter password"
-                variant="standard"
-                type="password"
-                autoComplete="off"
-                onChange={(event) => {
-                  setRegisterPassword(event.target.value);
-                }}
-              />
-            </div>
-            <div className="loginButton">
-              <button onClick={register} className="btn-login">
-                {" "}
-                Login
-              </button>
-            </div>
-          </Box>
-        </div>
+      <div style ={{display:'flex',flexDirection:'column',maxWidth:'400px',background:'white',padding:'50px',justifyContent:'center',alignItems:'center',maxHeight: '500px'}}>
+        <h3> Login </h3>
+        <input
+          placeholder="Email..."
+          style={{margin:10}}
+          className="form-control form-control-lg"
+          onChange={(event) => {
+            setLoginEmail(event.target.value);
+          }}
+        />
+        <input
+          placeholder="Password..."
+          style={{margin:10}}
+          className="form-control form-control-lg"
+          onChange={(event) => {
+            setLoginPassword(event.target.value);
+          }}
+        />
+
+        <button onClick={login} className="btn btn-primary btn-lg btn-block" style={{margin:10}}> Login</button>
       </div>
 
+      {/* <h4> User Logged In: </h4>
+      {user?.email}
+
+      <button onClick={logout}> Sign Out </button> */}
+{/* 
       <div className="login-bg-shape">
         <img src={"/assets/backImage.jpeg"} alt="" className="login-shape" />
-      </div>
+      </div> */}
     </div>
   );
 }
