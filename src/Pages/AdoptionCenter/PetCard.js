@@ -2,7 +2,7 @@ import "./PetCard.css";
 export default function PetCard(props){
     let [index,id,url,title]=[...props.petCardDetails]
     return(
-        <div>
+
         <div className="card__AdCen border-0 me-lg-4 mb-lg-0 mb-4">
           <div className="backgroundEffect__AdCen"></div>
           <div className="pic__AdCen">
@@ -21,7 +21,7 @@ export default function PetCard(props){
               <div className="btn__AdCen btn-primary">Details</div>
           </div>
         </div>
-      </div>
+
 
     )
 

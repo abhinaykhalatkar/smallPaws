@@ -1,7 +1,8 @@
 import "./AboutUs.css";
+import SimpleBackdrop from "../../components/Backdrop/Backdrop";
 
 export default function AboutUs(){
     return(<div>
-        <h1>About Us</h1>
+        <SimpleBackdrop loaderAnimation={true}/>
     </div>)
 }
