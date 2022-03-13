@@ -12,7 +12,7 @@ const SingleVet = () => {
                 <div className="text-center mt-3"> 
                <span>
                
-               <ul className="mb-0 list-unstyled d-flex flex-row" style={{color: "#1B7B2C"}}>
+               <ul className="mb-0 list-unstyled d-flex flex-row justify-content-md-center" style={{color: "#1B7B2C"}}>
                   
                   <li>
                     <i className="fa fa-star fa-xs"></i>

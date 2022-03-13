@@ -66,7 +66,7 @@ function App() {
             noValidate
             autoComplete="off"
           >
-            <h2 className="login-heading"> Login </h2>
+            <h2 className="login-heading"> Register </h2>
             <div className="googleSingIn">
               <GoogleLogin clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
                 buttonText="Sing up using Google"
@@ -74,7 +74,34 @@ function App() {
                 onFailure={responseGoogle}
                 cookiePolicy={'single_host_origin'} style={{ width: 192, height: 48 }} />
             </div>
-            <h6 className="login-heading"> Or </h6>
+            <div className="loginPage">
+              <TextField
+                label='Email' placeholder='Enter email address' variant="standard"
+                onChange={(event) => {
+                  setRegisterEmail(event.target.value);
+                }}
+              />
+            </div>
+            <div className="loginPage">
+              <TextField
+                label='Username' placeholder='Enter username' variant="standard"
+                onChange={(event) => {
+                  setRegisterEmail(event.target.value);
+                }}
+              />
+            </div>
+            <div className="loginPage">
+              <TextField
+                label='Password' placeholder='Enter password' variant="standard"
+                onChange={(event) => {
+                  setRegisterPassword(event.target.value);
+                }}
+              />
+            </div>
+            <div className="loginButton">
+              <button onClick={register} className="btn-login"> Register </button>
+            </div>
+            <h2 className="login-heading"> Login </h2>
             <div className="loginPage">
               <TextField
                 label='Username' placeholder='Enter username' variant="standard"

@@ -35,7 +35,7 @@ const Home = () => {
       {/* PAGE 2 */}
       <section className="page2">
         <div className="container">
-          <div className="page2Heading">
+          <div className="page2Heading mt-5">
             <h2 className="heading">ABOUT COMPANY</h2>
             <p className="py-3">
               SOME HISTORY
