@@ -92,7 +92,7 @@ function App() {
             </div>
             <div className="loginPage">
               <TextField
-                label='Password' placeholder='Enter password' variant="standard"
+                label='Password' placeholder='Enter password' variant="standard" type="password"
                 onChange={(event) => {
                   setRegisterPassword(event.target.value);
                 }}
@@ -112,7 +112,7 @@ function App() {
             </div>
             <div className="loginPage">
               <TextField
-                label='Password' placeholder='Enter password' variant="standard"
+                label='Password' placeholder='Enter password' variant="standard" type="password"
                 onChange={(event) => {
                   setRegisterPassword(event.target.value);
                 }}

@@ -1,0 +1,25 @@
+.input-box{
+    background-image: linear-gradient(-140deg, #ffffffd4, #dad8d8d6);
+    border-radius: 5px;
+    box-shadow: 4px 4px 9px #00000047;
+    height: 55vh;
+}
+/* .grid-container{
+    margin-left: 0px;
+} */
+.dayCareButton{
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+.btn-daycare{
+    border: none;
+    background: transparent;
+    padding: 6px 16px;
+    font-size: 0.8rem;
+    color: white;
+    background: #0d6efd;
+    border-radius: 5px;
+    transition: 0.3s all ease-out;
+    cursor: pointer;
+  }
