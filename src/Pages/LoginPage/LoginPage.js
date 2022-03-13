@@ -9,7 +9,7 @@ import {
   signOut,
 } from "firebase/auth";
 import "./LoginPage.css";
-import { auth } from "../../config/firebase.config";
+import { auth , Client_ID} from "../../config/firebase.config";
 function App() {
   const [registerEmail, setRegisterEmail] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
@@ -60,7 +60,7 @@ function App() {
         <div className="loginContent">
           <div className="googleSingIn">
             <GoogleLogin
-              clientId="729062511418-nfed3ktuohvrnlvejgsmrm9bu9k3ri7r.apps.googleusercontent.com"
+              clientId={Client_ID}
               buttonText="Sing up using Google"
               onSuccess={responseGoogle}
               onFailure={responseGoogle}
