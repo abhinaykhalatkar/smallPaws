@@ -68,7 +68,7 @@ function App() {
           >
             <h2 className="login-heading"> Register </h2>
             <div className="googleSingIn">
-              <GoogleLogin clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
+              <GoogleLogin clientId="729062511418-nfed3ktuohvrnlvejgsmrm9bu9k3ri7r.apps.googleusercontent.com"
                 buttonText="Sing up using Google"
                 onSuccess={responseGoogle}
                 onFailure={responseGoogle}

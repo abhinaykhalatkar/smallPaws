@@ -115,7 +115,7 @@ function Navbar() {
             </Link>
           </li>
         </ul>
-        <Button />
+        <Button className="buttonNav" />
       </nav>
     </>
   );

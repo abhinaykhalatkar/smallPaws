@@ -150,7 +150,7 @@ text-decoration: none;
     transition: 250ms;
   }
 
-  button {
+  .buttonNav {
     display: none;
   }
 }
