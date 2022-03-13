@@ -1,5 +1,3 @@
-// neelima config
-
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
@@ -19,24 +17,3 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 
-//abhinay config
-
-// import { initializeApp } from "firebase/app";
-// import {getAuth} from "firebase/auth";
-
-// const firebaseConfig = {
-//   apiKey: "AIzaSyCpvCM2LAyZtZTeZ21cggTsNLZd1mxr2L4",
-//   authDomain: "smallpaws-7f7f8.firebaseapp.com",
-//   databaseURL: "https://smallpaws-7f7f8-default-rtdb.europe-west1.firebasedatabase.app",
-//   projectId: "smallpaws-7f7f8",
-//   storageBucket: "smallpaws-7f7f8.appspot.com",
-//   messagingSenderId: "729062511418",
-//   appId: "1:729062511418:web:a5b6054aa5e0a02d593603",
-//   measurementId: "G-CBT2J1CBJY"
-// };
-
-// // Initialize Firebase
-// const app = initializeApp(firebaseConfig);
-// export const auth = getAuth(app);
-
-// export const Client_ID="729062511418-nfed3ktuohvrnlvejgsmrm9bu9k3ri7r.apps.googleusercontent.com"
