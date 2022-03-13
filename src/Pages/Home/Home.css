@@ -1,7 +1,9 @@
 .page1 {
-    width: 100%;
-    height: 100%;
-    position: relative;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-image: url(/public/assets/backImage.jpeg);
+  background-size: cover;
 }
 section .container{
   padding-bottom: 0px;
@@ -54,11 +56,14 @@ section .container{
         width: 100%;
     }
     .py-3{
-      margin-top: -2%;
-      color: #ABABAB;
-      font-size: smaller;
-      font-family: poppins;
-    }
+    display: flex;
+    margin-top: -2%;
+    color: #ABABAB;
+    font-size: smaller;
+    font-family: poppins;
+    justify-content: center;
+}
+    
     .py-4{
       color: #000000;
       font-size: x-large;
