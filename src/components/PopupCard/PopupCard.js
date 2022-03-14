@@ -6,7 +6,7 @@ export default function PopupCard(props) {
 
   return (
     <div>
-      {console.log(props.petDetails[0])}
+  
       <input
         className="modal-btn__popCard"
         type="checkbox"
@@ -23,16 +23,18 @@ export default function PopupCard(props) {
       <div className="modal__popCard">
         <div className="modal-wrap__popCard">
           <div className="photoContact">
-            {console.log(props.petDetails[0].image)}
+           
             {props.petDetails[0].image?<img src={props.petDetails[0].image} alt="https://via.placeholder.com/150/771796" />:
             <img src="https://via.placeholder.com/150/771796" alt="https://via.placeholder.com/150/771796" />}
             <button className="btn btn-primary"> Contact Us</button>
-            <button className="btn btn-warning" onClick={()=>{setIsContactBtnPressed(!isContactBtnPressed)}} >Contact Owner</button>
+            <button className="btn btn-warning" style={{  backgroundColor:"#e4572e",borderColor: "#e4572e"}} onClick={()=>{setIsContactBtnPressed(!isContactBtnPressed)}} >Contact Owner</button>
             {isContactBtnPressed?<ContactCard 
-            isLoggedIn={props.isLoggedIn} contactInfo={props.petDetails[0].contact}
+            isLoggedIn={props.isLoggedIn} vetContact={false} contactInfo={props.petDetails[0].contact}
+
             />:null}
 
           </div>
+          
           <div className="petDetails">
             <h1>{props.petDetails[0].name}</h1>
             <div className="morePetDetails">

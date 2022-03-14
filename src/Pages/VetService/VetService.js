@@ -1,13 +1,12 @@
 import React from 'react';
 import SingleVet from './SingleVet';
 
-const VetService = () => {
+const VetService = (props) => {
   return (
     <div>
-    <SingleVet/>
-    <SingleVet/>
-    <SingleVet/>
-
+    <SingleVet isLoggedIn={props.isLoggedIn}/>
+    <SingleVet isLoggedIn={props.isLoggedIn}/>
+    <SingleVet isLoggedIn={props.isLoggedIn}/>
     </div>
   )
 }

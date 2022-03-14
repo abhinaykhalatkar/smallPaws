@@ -1,8 +1,11 @@
 import React from "react";
 import "./VetService.css";
+import ContactCard from "../../components/PopupCard/contactCard/contactCard";
+import { useState } from "react";
 
 
-const SingleVet = () => {
+const SingleVet = (props) => {
+  let [showContact,setShowContact]=useState(false);
   return (
     <div className="container mt-5">
     <div className="row d-flex justify-content-center">
@@ -43,7 +46,12 @@ const SingleVet = () => {
                     </ul>
                     <div className="buttons">
                     {/* <button className="btn btn-outline-primary px-4">Message</button>  */}
-                    <button className="btn btn-outline-primary px-4 ms-3">Contact</button> 
+                    <button className="btn btn-outline-primary px-4 ms-3" onClick={()=>{
+                      setShowContact(!showContact)
+
+                    }}>Contact</button>
+                    {showContact?<ContactCard isLoggedIn={props.isLoggedIn} vetContact={true}/>:null}
+
                     </div>
                 </div>
             </div>

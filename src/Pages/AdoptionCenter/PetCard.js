@@ -7,7 +7,7 @@ export default function PetCard(props){
           <div className="backgroundEffect__AdCen"></div>
           <div className="pic__AdCen">
             {" "}
-            {console.log(url)}
+          
             {!(url==="")?<img src={url} alt="https://via.placeholder.com/150/771796" />:
             <img src={"https://via.placeholder.com/150/771796"} alt="https://via.placeholder.com/150/771796" />}
             <div className="date">

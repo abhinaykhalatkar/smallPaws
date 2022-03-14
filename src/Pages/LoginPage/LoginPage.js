@@ -43,8 +43,8 @@ function LoginPage(props) {
         registerEmail,
         registerPassword
       );
-      axios.get("https://ui-ux-dumbledore-team-default-rtdb.europe-west1.firebasedatabase.app/petList")
-      // axios.post("https://smallpaws-7f7f8-default-rtdb.europe-west1.firebasedatabase.app/userList",{[user._tokenResponse.localId]:user._tokenResponse.email});
+      console.log(user);
+      
     } catch (error) {
       console.log(error.message);
     }
@@ -62,13 +62,13 @@ function LoginPage(props) {
         setUserEmail:user._tokenResponse.email,
         setLocalId:user._tokenResponse.localId,
         setUserRegistered:user._tokenResponse.registered?true:false
-      })
-      axios.get("https://ui-ux-dumbledore-team-default-rtdb.europe-west1.firebasedatabase.app/petList")
-      .then((res)=>{
-        console.log(res);
-      })
+      }
+    
+      )
+      
       console.log(user);
     } catch (error) {
+      
       console.log(error.message);
     }
   };

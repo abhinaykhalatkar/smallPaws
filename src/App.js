@@ -27,8 +27,7 @@ const [loadedPetsData,setLoadedPetData]=useState(data.petList);
   return (
     
     <div className="App">
-      {console.log(loadedPetsData)}
-      {console.log(isUserLoggedIn,userEmail,userLocalId,userResitered)}
+
       <Navbar isUserLoggedIn={isUserLoggedIn} onChange={(val)=>{
             setUserLoggedIn(val.userLoggedIn);
             setUserEmail("");
@@ -51,7 +50,7 @@ const [loadedPetsData,setLoadedPetData]=useState(data.petList);
            onChange={(newData)=>{
             setLoadedPetData([...loadedPetsData,newData])
            }} />}/>
-          <Route path="/vetServices"  element={<VetServices/>}/>
+          <Route path="/vetServices"  element={<VetServices isLoggedIn={isUserLoggedIn}/>}/>
           <Route path="/helpUs"  element={<HelpUs/>}/>
           <Route path="/aboutUs"  element={<AboutUs/>}/>
           <Route path="/adoptionProcess"  element={<AdoptionProcess/>}/>
