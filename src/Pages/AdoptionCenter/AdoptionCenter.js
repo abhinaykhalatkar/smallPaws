@@ -1,57 +1,78 @@
-import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
+import PopupCard from "../../components/PopupCard/PopupCard";
 import axios from "axios";
 import PetCard from "./PetCard";
-import "./AdoptionCenter.css"
+import "./AdoptionCenter.css";
+import SimpleBackdrop from "../../components/Backdrop/Backdrop";
+import data from "../../components/Data/Data";
 
-export default function AdoptionCenter() {
+// export function CounterValue(){
+//   const [isPopupCounter, setPopupCounterValue]= useState(counter.counterVal);
+//   return isPopupCounter
+// }
+export default function AdoptionCenter(props) {
   const [isLoading, setIsLoading] = useState(true);
-  const [loadedPetsData, setLoadedPetData] = useState([]);
+  const [loadedPetsData, setLoadedPetData] = useState(props.loadedPetsData);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [cardId,setCardId]=useState(null);
+  const [isLoggedIn,setIsLoggedIn]=useState(props.isLoggedIn);
 
-  useEffect(() => {
-    setIsLoading(true);
+  // useEffect(() => {
+  //   setIsLoading(true);
 
-    axios
-      .get("https://jsonplaceholder.typicode.com/photos")
-      .then((res) => {
-        return res;
-      })
-      .then((res) => {
-        setIsLoading(false);
-        setLoadedPetData(res.data.splice(0, 20));
-      })
-      .catch((error) => {
-        return <div>Not loaded...</div>;
-      });
-  }, []);
+  //   axios
+  //     .get("https://jsonplaceholder.typicode.com/photos")
+  //     .then((res) => {
+  //       return res;
+  //     })
+  //     .then((res) => {
+  //       setIsLoading(false);
+  //       setLoadedPetData(res.data.splice(0, 10));
+  //     })
+  //     .catch((error) => {
+  //       return <div>Not loaded...</div>;
+  //     });
+  // }, []);
 
-  if (isLoading) {
-    return (
-      <section>
-        <p>Loading...</p>
-      </section>
-    );
-  }
+  // if (isLoading) {
+  //   return <SimpleBackdrop loaderAnimation={true} />;
+  // }
   return (
-    <div>
-        <div className="div1">
-        <NavLink to="/adoptionDetailsForm">Need to put pet for adoption?</NavLink>
-        </div>
-
- 
-        <div className="petDisplayModule">
+    <div className="container__AdCen">
+      <div className="petDisplayModule">
         <h1 className="heading">Adoption Center</h1>
         <div className="locationPicker">
-            <div>
+          <div>
             <label htmlFor="locationInput">Select City</label>
-          <select name="locationInput" id="city">
-            <option value="Heidelbirg">Heidelbirg</option>
-            <option value="Mannheim">Mannheim</option>
-          </select>
-            </div>
+            <select name="locationInput" id="city">
+              <option value="Heidelbirg">Heidelbirg</option>
+              <option value="Mannheim">Mannheim</option>
+            </select>
+          </div>
         </div>
-          <PetCard petTemplateData={loadedPetsData} />
+        <div className="petCardBox">
+          {loadedPetsData.map((el, index) => {
+            return (
+              <div className={"petCards"} id={index} key={index} onClick={(event)=>{
+                let node=event.target;
+                while (node.parentNode) {
+                  node = node.parentNode;
+                  if (node.className === "petCards")
+                      setCardId(node.id);
+              }
+              setIsPopupOpen(true);
+              }}>
+                <PetCard
+                  petCardDetails={[ el.image, el.name, el.animal,el.breed,el.age]}
+                />
+              </div>
+            );
+          })}
         </div>
+        {isPopupOpen ?
+          <PopupCard isLoggedIn={isLoggedIn}   petDetails={[loadedPetsData[cardId]]}  onChange={(val)=>setIsPopupOpen(val)} />
+        : null}
+      </div>
     </div>
   );
 }

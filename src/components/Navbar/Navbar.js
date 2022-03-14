@@ -6,45 +6,7 @@ import "./Navbar.css";
 import Button from "./Button";
 import Dropdown from "./Dropdown";
 
-// function Navbar() {
-//   const [dropdown, setDropdown] = useState(false);
-
-//   return (
-
-    
-//       <nav className="navbar__2">
-//         <Link to="/" className="navbar-logo__2">
-//           <img src= {'/assets/logo.svg'} alt="logo"/>
-//         </Link>
-//         <ul className="nav-items__2">
-//           {navItems.map((item) => {
-//             if (!(item.title === "Home")) {
-//               let pathLoc=item.path==="none"?<h3>{item.title}</h3>:<Link to={item.path}>{item.title}</Link>;
-
-//               return (
-//                 <li
-//                   key={item.id}
-//                   className={item.cName}
-//                   onMouseEnter={() => setDropdown(true)}
-//                   onMouseLeave={() => setDropdown(false)}
-//                 >
-//                   {pathLoc}
-//                   {dropdown && <Dropdown dropDownName={item.title} dropDownTitleCode={item.titleCode}/>}
-//                 </li>
-//               );
-//             }
-//             return (
-//               <li key={item.id} className={item.cName}>
-//                 <Link to={item.path}>{item.title}</Link>
-//               </li>
-//             );
-//           })}
-//         </ul>
-//         <Button />
-//       </nav>
-//   );
-// }
-function Navbar() {
+function Navbar(props) {
   const [click, setClick] = useState(false);
   const [dropdown, setDropdown1] = useState(false);
   const [dropdown2, setDropdown2] = useState(false);
@@ -76,7 +38,7 @@ function Navbar() {
     <>
       <nav className='navbar__67'>
         <Link to='/' className='navbar-logo__67' onClick={closeMobileMenu}>
-        <img className='fab fa-firstdraft' src= {'/assets/logo.svg'} alt="logo"/>
+        <img className='fab fa-firstdraft' src= {'/assets/whiteLogo.svg'} alt="logo"/>
         </Link>
         <div className='menu-icon__67' onClick={handleClick}>
         <img className={click ? 'fas fa-times' : 'fas fa-bars'} src= {'/assets/logo.svg'} alt="logo"/>
@@ -97,7 +59,7 @@ function Navbar() {
               className='nav-links__67'
               onClick={closeMobileMenu}
             >
-              Adoption <i className='fas fa-caret-down' />
+              Adoption 
             </p>
             {dropdown && <Dropdown dropdownNum={0}/>}
           </li>
@@ -111,7 +73,7 @@ function Navbar() {
               className='nav-links__67'
               onClick={closeMobileMenu}
             >
-              Services <i className='fas fa-caret-down' />
+              Services 
             </p>
             {dropdown2 && <Dropdown dropdownNum={1}/>}
           </li>
@@ -125,7 +87,7 @@ function Navbar() {
               className='nav-links__67'
               onClick={closeMobileMenu}
             >
-              Help Us <i className='fas fa-caret-down' />
+              Help Us 
             </p>
             {dropdown3 && <Dropdown dropdownNum={2}/>}
           </li>
@@ -139,21 +101,15 @@ function Navbar() {
               className='nav-links__67'
               onClick={closeMobileMenu}
             >
-              About Us <i className='fas fa-caret-down' />
+              About Us 
             </p>
             {dropdown4 && <Dropdown dropdownNum={3} />}
           </li>
-          <li>
-            <Link
-              to='/loginPage'
-              className='nav-links-mobile__67'
-              onClick={closeMobileMenu}
-            >
-              Sign Up
-            </Link>
-          </li>
         </ul>
-        <Button />
+        {props.isUserLoggedIn?<Button linkId={"/"} currentVal={props.isUserLoggedIn}  className="buttonNav" btnName="Log Out" onChange={(val)=>{
+          props.onChange(val)
+        }}/>:<Button linkId={"/loginPage"} currentVal={props.isUserLoggedIn}  className="buttonNav" btnName="Sign Up/Log In"/>}
+        
       </nav>
     </>
   );
