@@ -4,37 +4,39 @@ import axios from "axios";
 import PetCard from "./PetCard";
 import "./AdoptionCenter.css";
 import SimpleBackdrop from "../../components/Backdrop/Backdrop";
+import data from "../../components/Data/Data";
 
 // export function CounterValue(){
 //   const [isPopupCounter, setPopupCounterValue]= useState(counter.counterVal);
 //   return isPopupCounter
 // }
-export default function AdoptionCenter() {
+export default function AdoptionCenter(props) {
   const [isLoading, setIsLoading] = useState(true);
-  const [loadedPetsData, setLoadedPetData] = useState([]);
+  const [loadedPetsData, setLoadedPetData] = useState(props.loadedPetsData);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [cardId,setCardId]=useState(null);
+  const [isLoggedIn,setIsLoggedIn]=useState(props.isLoggedIn);
 
-  useEffect(() => {
-    setIsLoading(true);
+  // useEffect(() => {
+  //   setIsLoading(true);
 
-    axios
-      .get("https://jsonplaceholder.typicode.com/photos")
-      .then((res) => {
-        return res;
-      })
-      .then((res) => {
-        setIsLoading(false);
-        setLoadedPetData(res.data.splice(0, 10));
-      })
-      .catch((error) => {
-        return <div>Not loaded...</div>;
-      });
-  }, []);
+  //   axios
+  //     .get("https://jsonplaceholder.typicode.com/photos")
+  //     .then((res) => {
+  //       return res;
+  //     })
+  //     .then((res) => {
+  //       setIsLoading(false);
+  //       setLoadedPetData(res.data.splice(0, 10));
+  //     })
+  //     .catch((error) => {
+  //       return <div>Not loaded...</div>;
+  //     });
+  // }, []);
 
-  if (isLoading) {
-    return <SimpleBackdrop loaderAnimation={true} />;
-  }
+  // if (isLoading) {
+  //   return <SimpleBackdrop loaderAnimation={true} />;
+  // }
   return (
     <div className="container__AdCen">
       <div className="petDisplayModule">
@@ -61,14 +63,14 @@ export default function AdoptionCenter() {
               setIsPopupOpen(true);
               }}>
                 <PetCard
-                  petCardDetails={[index, el.id, el.url, el.title]}
+                  petCardDetails={[ el.image, el.name, el.animal,el.breed,el.age]}
                 />
               </div>
             );
           })}
         </div>
         {isPopupOpen ?
-          <PopupCard   petDetails={[loadedPetsData[cardId]]}  onChange={(val)=>setIsPopupOpen(val)} />
+          <PopupCard isLoggedIn={isLoggedIn}   petDetails={[loadedPetsData[cardId]]}  onChange={(val)=>setIsPopupOpen(val)} />
         : null}
       </div>
     </div>

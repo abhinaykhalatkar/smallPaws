@@ -1,5 +1,5 @@
 
-
+import axios from "axios";
 import { useState } from "react";
 import {
   createUserWithEmailAndPassword,
@@ -11,8 +11,9 @@ import {
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 // import "../App.css";
 import "./LoginPage.css";
+// import fire from "../../config/firebaseDatabse.config";
 import { auth } from "../../config/firebase.config";
-function App() {
+function LoginPage(props) {
   const [registerEmail, setRegisterEmail] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
   const [loginEmail, setLoginEmail] = useState("");
@@ -42,7 +43,8 @@ function App() {
         registerEmail,
         registerPassword
       );
-      console.log(user);
+      axios.get("https://ui-ux-dumbledore-team-default-rtdb.europe-west1.firebasedatabase.app/petList")
+      // axios.post("https://smallpaws-7f7f8-default-rtdb.europe-west1.firebasedatabase.app/userList",{[user._tokenResponse.localId]:user._tokenResponse.email});
     } catch (error) {
       console.log(error.message);
     }
@@ -55,6 +57,16 @@ function App() {
         loginEmail,
         loginPassword
       );
+      props.onChange({
+        userLoggedIn:user._tokenResponse?true:false,
+        setUserEmail:user._tokenResponse.email,
+        setLocalId:user._tokenResponse.localId,
+        setUserRegistered:user._tokenResponse.registered?true:false
+      })
+      axios.get("https://ui-ux-dumbledore-team-default-rtdb.europe-west1.firebasedatabase.app/petList")
+      .then((res)=>{
+        console.log(res);
+      })
       console.log(user);
     } catch (error) {
       console.log(error.message);
@@ -87,7 +99,7 @@ function App() {
         />
 
         <button onClick={register} className="btn btn-primary btn-lg btn-block" style={{margin:10}}> Create User</button>
-        <button class="btn btn-lg btn-block btn-primary" style={{backgroundColor: "#dd4b39",margin:10}} onClick={signInWithGoogle}><i class="fa fa-google me-2"></i> Sign in with google</button>
+        <button className="btn btn-lg btn-block btn-primary" style={{backgroundColor: "#dd4b39",margin:10}} onClick={signInWithGoogle}><i className="fa fa-google me-2"></i> Sign in with google</button>
         
       </div>
 
@@ -125,4 +137,4 @@ function App() {
   );
 }
 
-export default App;
+export default LoginPage;

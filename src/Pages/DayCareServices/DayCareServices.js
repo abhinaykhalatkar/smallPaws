@@ -7,6 +7,8 @@ import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Checkbox from '@mui/material/Checkbox';
 
+import MenuItem from '@mui/material/MenuItem';
+import {useState} from "react";
 
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -104,7 +106,9 @@ const DayCareServices = () => {
                 </Grid>
               </Grid>
               <div className="dayCareButton">
-                  <button className="btn-daycare"> Book </button>
+                  <button className="btn-daycare" onClick={(e)=>{
+                    e.preventDefault();
+                  }}> Book </button>
                 </div>
             </Box>
             

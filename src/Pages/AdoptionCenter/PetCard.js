@@ -1,22 +1,25 @@
 import "./PetCard.css";
 export default function PetCard(props){
-    let [index,id,url,title]=[...props.petCardDetails]
+    let [url,title,animal,breed,age]=[...props.petCardDetails]
     return(
 
         <div className="card__AdCen border-0 me-lg-4 mb-lg-0 mb-4">
           <div className="backgroundEffect__AdCen"></div>
           <div className="pic__AdCen">
             {" "}
-            <img className="" src={url} alt="" />
+            {console.log(url)}
+            {!(url==="")?<img src={url} alt="https://via.placeholder.com/150/771796" />:
+            <img src={"https://via.placeholder.com/150/771796"} alt="https://via.placeholder.com/150/771796" />}
             <div className="date">
               {" "}
-              <span className="day">26</span>{" "}
-              <span className="month">June</span>{" "}
-              <span className="year">2019</span>{" "}
+              <span className="day">{age}</span>{" "}
+              <span className="month">years</span>{" "}
+              <span className="year"></span>{" "}
             </div>
           </div>
           <div className="content__AdCen">
-            <h6>{id % 2 === 0 ? "DOG" : "CAT"}</h6>
+            <h6>{animal}</h6>
+            <p className="animalBreed">{breed}</p>
             <p>{title}</p>
               <div className="btn__AdCen btn-primary">Details</div>
           </div>

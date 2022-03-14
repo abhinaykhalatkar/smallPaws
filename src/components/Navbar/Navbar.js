@@ -6,7 +6,7 @@ import "./Navbar.css";
 import Button from "./Button";
 import Dropdown from "./Dropdown";
 
-function Navbar() {
+function Navbar(props) {
   const [click, setClick] = useState(false);
   const [dropdown, setDropdown1] = useState(false);
   const [dropdown2, setDropdown2] = useState(false);
@@ -105,17 +105,11 @@ function Navbar() {
             </p>
             {dropdown4 && <Dropdown dropdownNum={3} />}
           </li>
-          <li>
-            <Link
-              to='/loginPage'
-              className='nav-links-mobile__67'
-              onClick={closeMobileMenu}
-            >
-              Sign Up
-            </Link>
-          </li>
         </ul>
-        <Button className="buttonNav" />
+        {props.isUserLoggedIn?<Button linkId={"/"} currentVal={props.isUserLoggedIn}  className="buttonNav" btnName="Log Out" onChange={(val)=>{
+          props.onChange(val)
+        }}/>:<Button linkId={"/loginPage"} currentVal={props.isUserLoggedIn}  className="buttonNav" btnName="Sign Up/Log In"/>}
+        
       </nav>
     </>
   );
