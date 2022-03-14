@@ -1,0 +1,39 @@
+.about-heading{
+    margin-top: 10px;
+}
+.about-container{
+    background-color: #d9d9d97e;
+    height: 70vh;
+}
+.about-container-1{
+    margin-top: 60px;
+    background-color: #d9d9d97e;
+}
+.aboutusButton{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+
+.btn-aboutus{
+    border: none;
+    background: transparent;
+    padding: 6px 16px;
+    font-size: 0.8rem;
+    color: white;
+    background: #0d6efd;
+    border-radius: 5px;
+    transition: 0.3s all ease-out;
+    cursor: pointer;
+  }
+  .about-py{
+    color: #000000;
+    font-size: x-large;
+    font-family: fredoka;
+    text-align: center;
+  }
+.aboutImg{
+    padding: 45px;
+    width: 75%;
+}
