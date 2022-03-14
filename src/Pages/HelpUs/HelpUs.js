@@ -1,8 +1,5 @@
 import "./HelpUs.css";
-import Grid from '@mui/material/Grid';
 import { TextField } from "@mui/material";
-import Box from '@mui/material/Box';
-import { NavLink, Link } from "react-router-dom";
 
 export default function HelpUs() {
     return (
@@ -12,7 +9,7 @@ export default function HelpUs() {
             </div>
             <div className="help-container">
                 <div className="row">
-                    <div className="col-md-6">
+                    <div className="col-md-6 p-5">
                         <div className="help-Heading mt-5">
                             <h2 className="heading">Donate Now</h2>
                             <p className="py-3">
@@ -39,8 +36,8 @@ export default function HelpUs() {
                                     type="number" placeholder="Enter amount" style={{ width: "80%" }} />
                             </div>
                         </div>
-                        <div className="loginButton">
-                                <button className="btn-login">Donate Now</button>
+                        <div className="helpusButton">
+                                <button className="btn-helpus">Donate Now</button>
                         </div>
                     </div>
                     <div className="col-md-6">
@@ -52,7 +49,7 @@ export default function HelpUs() {
                 </div>
             <div className="help-container-1">
                 <div className="row">
-                    <div className="col-md-6">
+                    <div className="col-md-6 p-5">
                         <div className="help-Heading mt-5">
                             <h2 className="heading">Volunteer</h2>
                             <p className="py-3">
