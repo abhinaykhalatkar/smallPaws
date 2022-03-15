@@ -47,6 +47,7 @@ const [loadedPetsData,setLoadedPetData]=useState(data.petList);
           <Route path="/dayCareServices" element={<DayCareServices/>}/>
           <Route path="/adoptionCenter" element={<AdoptionCenter isLoggedIn={isUserLoggedIn} loadedPetsData={loadedPetsData}/>}/>
           <Route path="/adoptionDetailsForm" element={<AdoptionDetailsForm 
+          isLoggedIn={isUserLoggedIn}
            onChange={(newData)=>{
             setLoadedPetData([...loadedPetsData,newData])
            }} />}/>

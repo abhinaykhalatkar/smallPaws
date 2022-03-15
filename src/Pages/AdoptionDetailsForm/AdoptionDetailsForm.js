@@ -23,6 +23,7 @@ let [gender,setGender]=useState("")
 let [vaccination,setVaccination]=useState("")
 
     return (
+
         <div className="page1">
             <h3 data-aos="fade-right" data-aos-delay="400" style={{ color: "white", padding: "2%", marginLeft: "5%" }}>Pet Details</h3>
             <Box sx={{ flexGrow: 1 }}>
@@ -143,7 +144,7 @@ let [vaccination,setVaccination]=useState("")
                                         <button className="btn-daycare"
                                         onClick={(event)=>{
                                             event.preventDefault();
-                                            props.onChange({
+                                            props.isLoggedIn?                  props.onChange({
                                                 "address" : event.target.parentElement.previousSibling.children[9].firstChild.lastChild.children[0].value,
                                                 "age" : event.target.parentElement.previousSibling.children[7].firstChild.lastChild.children[0].value,
                                                 "animal" :event.target.parentElement.previousSibling.children[1].firstChild.lastChild.children[0].value,
@@ -159,8 +160,8 @@ let [vaccination,setVaccination]=useState("")
                                                 "training" : event.target.parentElement.previousSibling.children[5].firstChild.lastChild.children[0].value,
                                                 "vaccinated" : vaccination,
                                                 "contact":event.target.parentElement.previousSibling.children[10].firstChild.lastChild.children[0].value,
-                                            })
-                                            alert("pet added for adoption!!");
+                                            }):alert("Not Logged in ! Log in first to Put pet for adoption");
+                                            props.isLoggedIn?alert("pet added for adoption"):alert("login first");
                                             event.target.parentElement.previousSibling.children[9].firstChild.lastChild.children[0].value="";
                                             event.target.parentElement.previousSibling.children[7].firstChild.lastChild.children[0].value="";
                                             event.target.parentElement.previousSibling.children[1].firstChild.lastChild.children[0].value="";
@@ -171,6 +172,7 @@ let [vaccination,setVaccination]=useState("")
                                             event.target.parentElement.previousSibling.children[5].firstChild.lastChild.children[0].value="";
                                             event.target.parentElement.previousSibling.children[10].firstChild.lastChild.children[0].value="";
 
+                          
                                             }}> Submit </button>
                                     </div>
                                 </Grid>
