@@ -8,6 +8,8 @@ import Box from '@mui/material/Box';
 import Checkbox from '@mui/material/Checkbox';
 import MenuItem from '@mui/material/MenuItem';
 import {useState} from "react";
+import LoginPage from "../LoginPage/LoginPage";
+import { Link } from "react-router-dom";
 
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -21,9 +23,10 @@ const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 const AdoptionDetailsForm = (props) => {
 let [gender,setGender]=useState("")
 let [vaccination,setVaccination]=useState("")
+let [isUserLoggedIn,setIsUserLoggedIn]=useState(props.isLoggedIn)
 
     return (
-
+        isUserLoggedIn?
         <div className="page1">
             <h3 data-aos="fade-right" data-aos-delay="400" style={{ color: "white", padding: "2%", marginLeft: "5%" }}>Pet Details</h3>
             <Box sx={{ flexGrow: 1 }}>
@@ -144,7 +147,7 @@ let [vaccination,setVaccination]=useState("")
                                         <button className="btn-daycare"
                                         onClick={(event)=>{
                                             event.preventDefault();
-                                            props.isLoggedIn?                  props.onChange({
+                                            props.onChange({
                                                 "address" : event.target.parentElement.previousSibling.children[9].firstChild.lastChild.children[0].value,
                                                 "age" : event.target.parentElement.previousSibling.children[7].firstChild.lastChild.children[0].value,
                                                 "animal" :event.target.parentElement.previousSibling.children[1].firstChild.lastChild.children[0].value,
@@ -160,8 +163,7 @@ let [vaccination,setVaccination]=useState("")
                                                 "training" : event.target.parentElement.previousSibling.children[5].firstChild.lastChild.children[0].value,
                                                 "vaccinated" : vaccination,
                                                 "contact":event.target.parentElement.previousSibling.children[10].firstChild.lastChild.children[0].value,
-                                            }):alert("Not Logged in ! Log in first to Put pet for adoption");
-                                            props.isLoggedIn?alert("pet added for adoption"):alert("login first");
+                                            })
                                             event.target.parentElement.previousSibling.children[9].firstChild.lastChild.children[0].value="";
                                             event.target.parentElement.previousSibling.children[7].firstChild.lastChild.children[0].value="";
                                             event.target.parentElement.previousSibling.children[1].firstChild.lastChild.children[0].value="";
@@ -182,6 +184,12 @@ let [vaccination,setVaccination]=useState("")
                 </Grid>
             </Box>
         </div>
+        :
+        <Link to="/loginPage">
+        <div className="alertADForm"><h4>Log in First To Put a Pet For Adoption</h4></div>
+        </Link>
+        
+        
     );
 };
 
